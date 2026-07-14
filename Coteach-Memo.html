@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Coteach Practice Problems — Usage Review & Recommendations</title>
+<style>
+  :root {
+    --indigo: #4F46E5;
+    --lavender-bg: #E3E4FB;
+    --heading: #181C2E;
+    --body-gray: #6B7280;
+    --mint: #6EE7B0;
+    --coral: #F98080;
+    --periwinkle: #8B93F0;
+    --card-fill: #F8F9FC;
+    --hairline: #E5E7EB;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    padding: 48px 24px 80px;
+    background: #ffffff;
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif;
+    color: var(--heading);
+    display: flex;
+    justify-content: center;
+  }
+
+  .page {
+    max-width: 780px;
+    width: 100%;
+  }
+
+  .hero {
+    background: var(--lavender-bg);
+    border-radius: 16px;
+    padding: 32px 36px;
+    margin-bottom: 36px;
+  }
+
+  .hero .label {
+    color: var(--indigo);
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  .hero h1 {
+    font-family: "Poppins", "DM Sans", -apple-system, sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin: 0 0 18px 0;
+    color: var(--heading);
+  }
+
+  .meta {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 4px 12px;
+    font-size: 14px;
+    color: var(--body-gray);
+  }
+
+  .meta strong {
+    color: var(--heading);
+    font-weight: 600;
+  }
+
+  .timebox-note {
+    font-size: 13px;
+    font-style: italic;
+    color: var(--body-gray);
+    margin: 24px 0 36px;
+    padding-left: 14px;
+    border-left: 2px solid var(--hairline);
+  }
+
+  section.card {
+    background: #ffffff;
+    border: 1.5px solid var(--hairline);
+    border-radius: 14px;
+    padding: 28px 30px;
+    margin-bottom: 28px;
+  }
+
+  section.card.accent-mint { border-color: var(--mint); }
+  section.card.accent-coral { border-color: var(--coral); }
+  section.card.accent-periwinkle { border-color: var(--periwinkle); }
+
+  .section-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Poppins", "DM Sans", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: var(--indigo);
+    background: var(--card-fill);
+    border-radius: 8px;
+    padding: 4px 10px;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-family: "Poppins", "DM Sans", -apple-system, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    margin: 0 0 16px 0;
+    color: var(--heading);
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #374151;
+    margin: 0 0 14px 0;
+  }
+
+  p:last-child { margin-bottom: 0; }
+
+  ul.need-list {
+    margin: 0 0 14px 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  ul.need-list li {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #374151;
+    margin-bottom: 12px;
+    padding-left: 18px;
+    position: relative;
+  }
+
+  ul.need-list li:last-child { margin-bottom: 0; }
+
+  ul.need-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--indigo);
+  }
+
+  ul.need-list li strong {
+    color: var(--heading);
+    font-weight: 700;
+    display: block;
+    margin-bottom: 6px;
+  }
+
+  .ask-need {
+    font-size: 14px;
+    line-height: 1.55;
+    color: #374151;
+    margin-bottom: 4px;
+  }
+
+  .ask-need:last-child { margin-bottom: 0; }
+
+  .tag {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--body-gray);
+    background: var(--card-fill);
+    border-radius: 5px;
+    padding: 2px 7px;
+    margin-right: 8px;
+  }
+
+  .tag.need {
+    color: #ffffff;
+    background: var(--indigo);
+  }
+
+  .example-block {
+    background: var(--card-fill);
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    padding: 20px 22px;
+    margin-bottom: 18px;
+  }
+
+  .example-block p {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .example-block p:last-child { margin-bottom: 0; }
+
+  .example-title {
+    font-family: "Poppins", "DM Sans", -apple-system, sans-serif;
+    font-weight: 700;
+    font-size: 15.5px;
+    color: var(--heading);
+    margin-bottom: 12px;
+  }
+
+  .example-cat {
+    display: inline-block;
+    font-family: -apple-system, sans-serif;
+    font-weight: 600;
+    font-size: 10.5px;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--indigo);
+    background: var(--lavender-bg);
+    border-radius: 6px;
+    padding: 3px 8px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  .ex-label {
+    font-weight: 700;
+    color: var(--heading);
+  }
+
+  .placeholder {
+    background: var(--card-fill);
+    border: 1px dashed var(--hairline);
+    border-radius: 10px;
+    padding: 16px 18px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--body-gray);
+    font-style: italic;
+  }
+
+  .placeholder strong {
+    font-style: normal;
+    color: var(--heading);
+    font-weight: 600;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+    margin-top: 4px;
+  }
+
+  thead th {
+    background: var(--card-fill);
+    color: var(--heading);
+    font-weight: 600;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--hairline);
+    color: #374151;
+    vertical-align: top;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  .optional-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--coral);
+    background: #FFF1F1;
+    border-radius: 6px;
+    padding: 3px 8px;
+    margin-left: 8px;
+    vertical-align: middle;
+  }
+
+  footer.card {
+    border-color: var(--periwinkle);
+  }
+
+  .divider {
+    text-align: center;
+    margin: 8px 0 28px;
+    color: var(--periwinkle);
+    font-size: 18px;
+    letter-spacing: 6px;
+  }
+
+  /* Mockup: structured clarifying question */
+  .mockup-wrap {
+    margin-top: 18px;
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: 14px;
+    padding: 18px;
+  }
+
+  .mockup-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--indigo);
+    margin-bottom: 10px;
+  }
+
+  .mockup-panels {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media (max-width: 620px) {
+    .mockup-panels { grid-template-columns: 1fr; }
+  }
+
+  .mockup-panel {
+    border-radius: 12px;
+    border: 1.5px solid var(--hairline);
+    overflow: hidden;
+    background: #fff;
+  }
+
+  .mockup-panel-header {
+    padding: 10px 12px;
+    font-weight: 700;
+    font-size: 11.5px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+  }
+
+  .mockup-panel-header .dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+  }
+
+  .mockup-panel.current .mockup-panel-header {
+    background: #FFF1F1;
+    color: #B4232F;
+  }
+  .mockup-panel.current .mockup-panel-header .dot { background: var(--coral); }
+
+  .mockup-panel.proposed .mockup-panel-header {
+    background: #EEFBF4;
+    color: #147A52;
+  }
+  .mockup-panel.proposed .mockup-panel-header .dot { background: var(--mint); }
+
+  .mockup-chat-body {
+    padding: 14px 12px;
+    background: var(--card-fill);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .mockup-bubble-row { display: flex; }
+  .mockup-bubble-row.teacher { justify-content: flex-end; }
+  .mockup-bubble-row.coteach { justify-content: flex-start; }
+
+  .mockup-bubble {
+    max-width: 90%;
+    padding: 9px 11px;
+    border-radius: 12px;
+    font-size: 11.5px;
+    line-height: 1.5;
+  }
+
+  .mockup-bubble-row.teacher .mockup-bubble {
+    background: var(--indigo);
+    color: #fff;
+    border-bottom-right-radius: 3px;
+  }
+
+  .mockup-bubble-row.coteach .mockup-bubble {
+    background: #fff;
+    border: 1px solid var(--hairline);
+    color: #374151;
+    border-bottom-left-radius: 3px;
+  }
+
+  .mockup-bubble.wall .mockup-flag {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--coral);
+    background: #FFF1F1;
+    border-radius: 5px;
+    padding: 2px 6px;
+  }
+
+  .mockup-quick-card {
+    background: #fff;
+    border: 1px solid var(--hairline);
+    border-radius: 12px;
+    border-bottom-left-radius: 3px;
+    padding: 11px;
+    max-width: 90%;
+  }
+
+  .mockup-quick-card .mockup-lead {
+    font-size: 11.5px;
+    color: var(--heading);
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .mockup-quick-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--card-fill);
+    border: 1.5px solid var(--hairline);
+    border-radius: 9px;
+    padding: 8px 10px;
+    margin-bottom: 6px;
+    font-size: 11px;
+    color: var(--heading);
+  }
+
+  .mockup-quick-option:last-of-type { margin-bottom: 0; }
+
+  .mockup-quick-option .mockup-example {
+    display: block;
+    font-size: 10px;
+    color: var(--body-gray);
+    margin-top: 1px;
+  }
+
+  .mockup-quick-option.selected {
+    border-color: var(--indigo);
+    background: #EEECFD;
+  }
+
+  .mockup-radio {
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    border: 2px solid var(--hairline);
+    flex-shrink: 0;
+  }
+
+  .mockup-quick-option.selected .mockup-radio {
+    border-color: var(--indigo);
+    background: var(--indigo);
+    box-shadow: inset 0 0 0 2px #fff;
+  }
+
+  .mockup-other-link {
+    font-size: 10.5px;
+    color: var(--indigo);
+    font-weight: 600;
+    margin-top: 3px;
+    display: inline-block;
+  }
+
+  .mockup-caption {
+    margin-top: 14px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: #374151;
+  }
+
+  .mockup-caption strong { color: var(--heading); }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="hero">
+    <div class="label">Memo</div>
+    <h1>Coteach Practice Problems — Usage Review &amp; Recommendations</h1>
+    <div class="meta">
+      <span>To</span><span><strong>Riz Malik</strong></span>
+      <span>From</span><span><strong>Kim Kays</strong></span>
+      <span>Re</span><span>Take-home exercise — practice problems workflow</span>
+      <span>Date</span><span>July 14, 2026</span>
+    </div>
+  </div>
+
+  <div class="timebox-note">
+    Reviewed all 10 provided threads. Time spent: ~2.5 hours across a few sessions, slightly over the box. What I'd do with more time is at the end.
+  </div>
+
+  <section class="card accent-mint">
+    <div class="section-number">01</div>
+    <h2>What are teachers trying to do?</h2>
+    <p>Across the ten threads, the literal ask is almost always narrower than what the teacher actually needs. Four patterns show up:</p>
+    <ul class="need-list">
+      <li>
+        <strong>The default ask, underspecified.</strong>
+        <div class="ask-need"><span class="tag">What they asked</span>a bare "give me practice for this lesson," with no quantity, difficulty, or exact skill named.</div>
+        <div class="ask-need"><span class="tag need">What they actually needed</span>a specific problem shape already in their head, which only surfaced once Coteach guessed wrong and got corrected.</div>
+      </li>
+      <li>
+        <strong>Explicit tiering.</strong>
+        <div class="ask-need"><span class="tag">What they asked</span>a named difficulty structure, leveled, DOK 1-3, Mild/Medium/Spicy.</div>
+        <div class="ask-need"><span class="tag need">What they actually needed</span>tiers where each level teaches something different, not just bigger numbers, and a format that actually works where it's used, one page when printed, landscape when it's going on a whiteboard, and an export that doesn't break that formatting.</div>
+      </li>
+      <li>
+        <strong>Diagnosis in disguise.</strong>
+        <div class="ask-need"><span class="tag">What they asked</span>more practice on a skill.</div>
+        <div class="ask-need"><span class="tag need">What they actually needed</span>practice targeted at a specific misconception or data point ("only 7% got this right"), which requires figuring out what the student is actually getting wrong before generating anything, not just repeating the same skill at the same level.</div>
+      </li>
+      <li>
+        <strong>Translation friction.</strong>
+        <div class="ask-need"><span class="tag">What they asked</span>help identifying a standard or code, a garbled code, an uploaded image.</div>
+        <div class="ask-need"><span class="tag need">What they actually needed</span>translating what they typed into the standard or lesson the system actually recognizes, before the real request could even begin.</div>
+      </li>
+    </ul>
+    <p>The throughline: teachers are underasking. They type less than what they actually want, for a few reasons: spelling out the full spec (quantity, level, format, the exact misconception) takes longer than just trying Coteach and fixing what comes back; the interface doesn't prompt for the details that are missing; or the gap is something they need help resolving, not something they're deliberately leaving out (a garbled standard code, an unnamed misconception). What they actually need isn't a fast first draft that gets fixed in follow-up prompts, it's a narrower first draft: Coteach asking the one clarifying question that matters, defaulting sensibly when it doesn't, and treating each correction as proof of what the teacher wanted all along.</p>
+  </section>
+
+  <section class="card accent-coral">
+    <div class="section-number">02</div>
+    <h2>What does "good" look like?</h2>
+    <p>Six dimensions, each with what meets the bar and what falls short. No numeric scoring, with this few examples a 1-4 scale would imply more precision than the data supports. This table is meant to be applied directly against threads in section 3.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Dimension</th>
+          <th>Meets the bar</th>
+          <th>Falls short</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Alignment</strong></td>
+          <td>Pulls from the exact lesson, standard, or cool-down the teacher named, not just the general topic.</td>
+          <td>Math is right, but it's aligned to the general subject, not the specific skill in play.</td>
+        </tr>
+        <tr>
+          <td><strong>Rigor</strong></td>
+          <td>Keeps students working with the real, grade-level idea, not a shortcut around it.</td>
+          <td>Quietly simplifies the task instead of scaffolding it, e.g. removing the part that made it hard.</td>
+        </tr>
+        <tr>
+          <td><strong>Scaffolding structure</strong></td>
+          <td>Progresses across real cognitive levels (DOK-style, not just bigger numbers) using the scaffold technique the lesson or standard itself teaches for that skill.</td>
+          <td>"Harder" just means more steps or bigger numbers at the same cognitive level, or the scaffold used isn't one the curriculum actually teaches.</td>
+        </tr>
+        <tr>
+          <td><strong>Classroom-readiness</strong></td>
+          <td>Works exactly where the teacher said it's going, right page length, right orientation, exports cleanly.</td>
+          <td>Teacher has to reformat, resize, or fix the export before they can use it.</td>
+        </tr>
+        <tr>
+          <td><strong>Specificity</strong></td>
+          <td>Could only have been generated for this lesson, this standard, this misconception.</td>
+          <td>Generic enough that it could've been produced for any similar lesson with a find-and-replace.</td>
+        </tr>
+        <tr>
+          <td><strong>Input robustness</strong></td>
+          <td>Reads the teacher's actual intent through typos, shorthand, or malformed codes without burning extra prompts, and asks one targeted clarifying question when the ambiguity is high-stakes (would change the correct answer or the skill being practiced) rather than guessing.</td>
+          <td>A surface-level input error (missing periods, awkward phrasing) derails the whole exchange, or a high-stakes ambiguity gets guessed at instead of clarified, forcing a correction cycle.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="margin-top:16px; font-size:13.5px; color:var(--body-gray);"><strong style="color:var(--heading);">Note on scaffolding structure:</strong> this dimension assumes the request is tied to a specific IM lesson, which is where DOK progression and curriculum-native scaffolds (decompose-and-rearrange, tape diagrams, ten-frames) have something to anchor to. For a request like the MCAS-style composite shapes set, which is standard/benchmark-aligned rather than tied to a specific IM lesson, this dimension doesn't have the same anchor and should be read as a boundary case rather than a strict miss.</p>
+  </section>
+
+  <section class="card accent-periwinkle">
+    <div class="section-number">03</div>
+    <h2>Where does Coteach succeed or fall short?</h2>
+    <p>One thread per need-category from section 1, chosen to span the range rather than all being clean wins.</p>
+
+    <div class="example-block">
+      <div class="example-title">Thread 9 — Decimal Addition <span class="example-cat">default ask, underspecified</span></div>
+      <p><span class="ex-label">What the teacher needed:</span> practice adding two decimals together (like 2.35 + 1.8), not a whole number plus a decimal.</p>
+      <p><span class="ex-label">What Coteach did well:</span> when the original ask was ambiguous ("adding whole numbers with decimals in it"), it didn't guess blindly, it asked a clarifying question distinguishing the two readings. That's the input-robustness behavior we want, and it's proof the capability already exists in the product.</p>
+      <p><span class="ex-label">Where it fell short:</span> the clarifying question it asked wasn't the one that mattered, "I want both to have a whole and a decimal in it" is genuinely ambiguous phrasing, and Coteach picked the wrong reading without checking further, building a whole+decimal set when she meant decimal+decimal. It took a second, blunter correction to land right.</p>
+      <p><span class="ex-label">Better response:</span> show one worked example before building the full set, or ask with a concrete sample ("like 2.35 + 1.8, or like 5 + 2.3?") instead of abstract category language. A single example catches a misread in one prompt instead of two.</p>
+    </div>
+
+    <div class="example-block">
+      <div class="example-title">Thread 3 — BTC Check Your Understanding <span class="example-cat">explicit tiering</span></div>
+      <p><span class="ex-label">What the teacher needed:</span> a Mild/Medium/Spicy tiered set for a specific lesson, fitting one printed page, with a graph structure she had a specific picture of, eventually needed for display on an interactive whiteboard.</p>
+      <p><span class="ex-label">What Coteach did well:</span> the pedagogy stayed strong across five rounds of feedback, three genuinely distinct tiers tied to real skills, correct math, and it kept adapting without losing the tiering logic.</p>
+      <p><span class="ex-label">Where it fell short:</span> all four misses were information gaps, just from different sources. Page length and the missing graphs were information already on hand, stated in the first prompt, or already pulled from Coteach's own lesson lookup, that just didn't make it into the output. Graph layout was information nobody had, a real ambiguity the first prompt never resolved. The landscape request only existed once she thought to mention it, new scope rather than a missed inference, and the fix that followed was never verified to actually work.</p>
+      <p><span class="ex-label">Better response:</span> check output against information already on hand before returning it, ask when nothing on hand resolves a real ambiguity, and confirm a fix actually rendered before calling it done.</p>
+    </div>
+
+    <div class="example-block">
+      <div class="example-title">Thread 6 — Fraction Equivalency <span class="example-cat">diagnosis in disguise</span></div>
+      <p><span class="ex-label">What the teacher needed:</span> targeted practice for one student with "recurring issues" with fraction equivalency, but the actual misconception was never named.</p>
+      <p><span class="ex-label">What Coteach did well:</span> rather than guessing at a random slice of the skill, it built a full concrete-to-abstract progression and added something the ask didn't request, diagnostic notes coaching the teacher on what to watch for at each problem to find the real gap. That's a genuinely clever compensation for missing information.</p>
+      <p><span class="ex-label">Where it fell short:</span> it's still generic. "Fraction equivalency" got treated as one broad skill because no specific gap was ever given, so the set covers likely trouble spots rather than this student's actual one.</p>
+      <p><span class="ex-label">Better response:</span> ask one diagnostic question before generating ("mixing up numerator/denominator, or only multiplying but not dividing?"), since "recurring" implies the teacher has already seen a pattern even if they didn't type it.</p>
+    </div>
+
+    <div class="example-block" style="margin-bottom:0;">
+      <div class="example-title">Thread 8 — Standard Code <span class="example-cat">translation friction</span></div>
+      <p><span class="ex-label">What the teacher needed:</span> practice aligned to a standard they had in mind, typed as "3mdc7" instead of "3.MD.C.7."</p>
+      <p><span class="ex-label">What Coteach did well:</span> it didn't fabricate a guess, it asked for a recognizable format, and once it got one, found the right standard and built genuinely aligned practice matching the lesson's own cool-down.</p>
+      <p><span class="ex-label">Where it fell short:</span> the first attempt, "3mdc7," is literally the standard with the periods and case stripped out, a trivial normalization Coteach didn't apply, and it asked for reformatting anyway. The second attempt, "3md7," is missing a letter entirely, a genuinely harder case, so failing that one is more defensible. Three prompts to land on the right standard either way.</p>
+      <p><span class="ex-label">Better response:</span> strip punctuation and case before matching against the standards index, that alone would have resolved this in one prompt instead of three. For a case like "3md7" where a character is actually missing, a fuzzy match with a confirming question ("Did you mean 3.MD.C.7?") is the more honest fallback.</p>
+    </div>
+  </section>
+
+  <section class="card accent-mint">
+    <div class="section-number">04</div>
+    <h2>What would you do next?</h2>
+    <p>Three changes, ranked by how much of the dataset they'd address and how much trust is at stake, not by how cheap they'd be to build.</p>
+
+    <div class="example-block">
+      <div class="example-title">1. Ask before generating, but only when the ambiguity is high-stakes.</div>
+      <p>Highest leverage because it's the throughline of this memo: teachers underask, and the cost currently lands on them. T9 asked the wrong clarifying question; T6 and T2 didn't ask at all; T7 silently dropped visuals the teacher had to request separately. Not a blanket "always clarify," that adds friction to requests that don't need it. Ask only when the ambiguity would change the actual math, skill, or misconception; otherwise default and state the assumption. Worth pairing with a UX shift: surface that clarifying question as a structured, tappable choice, quick-select buttons or a short multiple-choice prompt, rather than another paragraph of chat text a teacher can skim past. A quick-select question is faster to answer and harder to miss than prose, which raises the odds Coteach actually gets the answer before generating.</p>
+
+      <div class="mockup-wrap">
+        <div class="mockup-label">Concept mockup — same T9 exchange, two UX outcomes</div>
+        <div class="mockup-panels">
+
+          <div class="mockup-panel current">
+            <div class="mockup-panel-header"><span class="dot"></span>Current: buried in prose</div>
+            <div class="mockup-chat-body">
+              <div class="mockup-bubble-row teacher">
+                <div class="mockup-bubble">Can you help me create some problems for my students to practice adding whole numbers with decimals in it</div>
+              </div>
+              <div class="mockup-bubble-row coteach">
+                <div class="mockup-bubble wall">I see, this unit covers decimals and large whole numbers separately, not combined. Are you wanting problems where students add decimals together (like 2.5 + 3.7) or add whole numbers to decimals (like 5 + 2.3)? Let me know which type you'd like.
+                  <span class="mockup-flag">Easy to skim past</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="mockup-panel proposed">
+            <div class="mockup-panel-header"><span class="dot"></span>Proposed: quick-select</div>
+            <div class="mockup-chat-body">
+              <div class="mockup-bubble-row teacher">
+                <div class="mockup-bubble">Can you help me create some problems for my students to practice adding whole numbers with decimals in it</div>
+              </div>
+              <div class="mockup-bubble-row coteach">
+                <div class="mockup-quick-card">
+                  <div class="mockup-lead">Quick check before I build this, which type?</div>
+                  <div class="mockup-quick-option selected">
+                    <span class="mockup-radio"></span>
+                    <span>Two decimals together<span class="mockup-example">e.g. 2.35 + 1.8</span></span>
+                  </div>
+                  <div class="mockup-quick-option">
+                    <span class="mockup-radio"></span>
+                    <span>Whole number + decimal<span class="mockup-example">e.g. 5 + 2.3</span></span>
+                  </div>
+                  <a class="mockup-other-link">Something else →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <p class="mockup-caption"><strong>Why this matters:</strong> in the actual thread, Coteach asked roughly the right question but phrased it as a paragraph with examples buried mid-sentence, then still built the wrong version, needing a second, blunter correction ("No, like this: 2.35 + 1.8") to land right. A tap-to-answer format doesn't change Coteach's judgment about when to ask, it changes how likely the teacher is to read and answer accurately the first time.</p>
+      </div>
+    </div>
+
+    <div class="example-block">
+      <div class="example-title">2. Verify output against what Coteach already knows, and confirm fixes actually rendered.</div>
+      <p>Ranks second not for frequency, T3 alone has more correction turns than any other thread, but for damage: this isn't missing information, it's asserting something is correct or fixed when it isn't (the stated page limit it violated, the graphs its own lesson lookup called for and left out, the landscape export it claimed to fix and didn't). For a product built on trust, that's worse than asking a question. A lightweight self-check against stated constraints and Coteach's own retrieved content, plus confirming an export actually rendered, would catch this before the teacher does.</p>
+    </div>
+
+    <div class="example-block" style="margin-bottom:0;">
+      <div class="example-title">3. Normalize and fuzzy-match structured input like standard codes.</div>
+      <p>Smallest in scope, nearly free. T8's "3mdc7" is the standard with punctuation and case stripped, a fix that should have resolved it in one prompt instead of three. Straightforward engineering, worth shipping alongside the bigger fixes rather than treating as its own bet.</p>
+    </div>
+  </section>
+
+  <section class="card accent-coral">
+    <div class="section-number">05<span class="optional-tag">Optional</span></div>
+    <h2>How would we measure progress over time?</h2>
+    <p>Score a sample of live responses against the six rubric dimensions from section 2 using an LLM judge, few-shot prompted on the meets/falls-short definitions already written there, so the rubric doesn't just live in this memo. Pair it with a couple of cheap behavioral proxies as a sanity check on the judge itself: did the teacher immediately regenerate or re-ask, did they edit heavily before exporting, and did a correction turn happen on a request the judge scored as "meets" (a sign the judge missed something). Trend scores by dimension and by the four need-categories from section 1, and watch one thing specifically: whether the gap between "needed clarification but wasn't asked" and "asked properly" narrows over time, since that's the leading indicator for whether Recommendation 1 is actually working.</p>
+  </section>
+
+  <footer class="card">
+    <h2 style="font-size:17px;">What I'd do with more time</h2>
+    <ul class="need-list">
+      <li>Annotate all 10 threads against the full rubric instead of the four in section 3, ten is barely enough to see a pattern, not enough to trust its edges.</li>
+      <li>Build a small working version of the LLM-judge sketch in section 5 rather than describing it, even a rough pass would show whether the rubric's dimensions actually hold up against a judge's real scoring behavior.</li>
+      <li>Talk to a couple of teachers directly about the diagnosis-in-disguise gap (T6): does the diagnostic coaching Coteach added actually get used, or would they rather just be asked one question up front?</li>
+      <li>Pressure-test the four need-categories from section 1 against a bigger sample. Ten threads is enough to propose categories, not enough to be confident they're the right four.</li>
+    </ul>
+  </footer>
+
+</div>
+</body>
+</html>
