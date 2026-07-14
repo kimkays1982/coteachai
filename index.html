@@ -173,8 +173,8 @@
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    color: var(--body-gray);
-    background: var(--card-fill);
+    color: var(--heading);
+    background: var(--hairline);
     border-radius: 5px;
     padding: 2px 7px;
     margin-right: 8px;
@@ -494,7 +494,7 @@
   </div>
 
   <div class="timebox-note">
-    Reviewed all 10 provided threads. Time spent: ~2.5 hours across a few sessions, slightly over the box. What I'd do with more time is at the end.
+    Reviewed all 10 provided threads. Time spent: ~2.5 hours across a few sessions.
   </div>
 
   <section class="card accent-mint">
@@ -523,13 +523,13 @@
         <div class="ask-need"><span class="tag need">What they actually needed</span>translating what they typed into the standard or lesson the system actually recognizes, before the real request could even begin.</div>
       </li>
     </ul>
-    <p>The throughline: teachers are underasking. They type less than what they actually want, for a few reasons: spelling out the full spec (quantity, level, format, the exact misconception) takes longer than just trying Coteach and fixing what comes back; the interface doesn't prompt for the details that are missing; or the gap is something they need help resolving, not something they're deliberately leaving out (a garbled standard code, an unnamed misconception). What they actually need isn't a fast first draft that gets fixed in follow-up prompts, it's a narrower first draft: Coteach asking the one clarifying question that matters, defaulting sensibly when it doesn't, and treating each correction as proof of what the teacher wanted all along.</p>
+    <p>The throughline: teachers are underasking. They type less than what they actually want, whether because spelling out the full spec takes longer than just trying Coteach and fixing what comes back, the interface doesn't prompt for what's missing, or the gap is something they need help resolving rather than something they're deliberately leaving out.</p>
   </section>
 
   <section class="card accent-coral">
     <div class="section-number">02</div>
     <h2>What does "good" look like?</h2>
-    <p>Six dimensions, each with what meets the bar and what falls short. No numeric scoring, with this few examples a 1-4 scale would imply more precision than the data supports. This table is meant to be applied directly against threads in section 3.</p>
+    <p>Six dimensions, each scored as meets the bar or falls short. Skipping a 1-4 scale on purpose, ten threads isn't enough data to fake that kind of precision. Section 3 applies this directly to real threads.</p>
     <table>
       <thead>
         <tr>
@@ -577,7 +577,7 @@
   <section class="card accent-periwinkle">
     <div class="section-number">03</div>
     <h2>Where does Coteach succeed or fall short?</h2>
-    <p>One thread per need-category from section 1, chosen to span the range rather than all being clean wins.</p>
+    <p>One thread per category. I picked ones that show where Coteach fell short, not just where it worked.</p>
 
     <div class="example-block">
       <div class="example-title">Thread 9 — Decimal Addition <span class="example-cat">default ask, underspecified</span></div>
@@ -588,7 +588,7 @@
     </div>
 
     <div class="example-block">
-      <div class="example-title">Thread 3 — BTC Check Your Understanding <span class="example-cat">explicit tiering</span></div>
+      <div class="example-title">Thread 3 — BTC (Building Thinking Classrooms) Check Your Understanding <span class="example-cat">explicit tiering</span></div>
       <p><span class="ex-label">What the teacher needed:</span> a Mild/Medium/Spicy tiered set for a specific lesson, fitting one printed page, with a graph structure she had a specific picture of, eventually needed for display on an interactive whiteboard.</p>
       <p><span class="ex-label">What Coteach did well:</span> the pedagogy stayed strong across five rounds of feedback, three genuinely distinct tiers tied to real skills, correct math, and it kept adapting without losing the tiering logic.</p>
       <p><span class="ex-label">Where it fell short:</span> all four misses were information gaps, just from different sources. Page length and the missing graphs were information already on hand, stated in the first prompt, or already pulled from Coteach's own lesson lookup, that just didn't make it into the output. Graph layout was information nobody had, a real ambiguity the first prompt never resolved. The landscape request only existed once she thought to mention it, new scope rather than a missed inference, and the fix that followed was never verified to actually work.</p>
@@ -615,7 +615,7 @@
   <section class="card accent-mint">
     <div class="section-number">04</div>
     <h2>What would you do next?</h2>
-    <p>Three changes, ranked by how much of the dataset they'd address and how much trust is at stake, not by how cheap they'd be to build.</p>
+    <p>Three changes, ranked by how much of the dataset they'd address and how much trust is at stake.</p>
 
     <div class="example-block">
       <div class="example-title">1. Ask before generating, but only when the ambiguity is high-stakes.</div>
@@ -679,9 +679,9 @@
   </section>
 
   <section class="card accent-coral">
-    <div class="section-number">05<span class="optional-tag">Optional</span></div>
+    <div class="section-number">05</div>
     <h2>How would we measure progress over time?</h2>
-    <p>Score a sample of live responses against the six rubric dimensions from section 2 using an LLM judge, few-shot prompted on the meets/falls-short definitions already written there, so the rubric doesn't just live in this memo. Pair it with a couple of cheap behavioral proxies as a sanity check on the judge itself: did the teacher immediately regenerate or re-ask, did they edit heavily before exporting, and did a correction turn happen on a request the judge scored as "meets" (a sign the judge missed something). Trend scores by dimension and by the four need-categories from section 1, and watch one thing specifically: whether the gap between "needed clarification but wasn't asked" and "asked properly" narrows over time, since that's the leading indicator for whether Recommendation 1 is actually working.</p>
+    <p>Score a sample of live responses against the six rubric dimensions from section 2 using an LLM judge, few-shot prompted on the meets/falls-short definitions already written there, so the rubric doesn't just live in this memo. Pair it with a couple of behavioral proxies you can already pull from usage logs, as a sanity check on the judge itself: did the teacher immediately regenerate or re-ask, did they edit heavily before exporting, and did a request the judge scored as "meets" still need a follow-up fix (a sign the judge missed something). Trend scores by dimension and by the four need-categories from section 1, and watch one thing specifically: whether the gap between "needed clarification but wasn't asked" and "asked properly" narrows over time, since that's the leading indicator for whether Recommendation 1 is actually working.</p>
   </section>
 
   <footer class="card">
